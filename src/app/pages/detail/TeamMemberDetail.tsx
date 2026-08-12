@@ -13,7 +13,7 @@ export default function TeamMemberDetail() {
   if (!m) return null;
 
   const photo = m.resolved_image || m.photo || m.photo_url || '';
-  const photoSrc = photo ? (photo.startsWith('http') ? photo : `http://localhost:8000${photo}`) : '';
+  const photoSrc = photo || '';
 
   return (
     <div>

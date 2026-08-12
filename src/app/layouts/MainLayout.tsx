@@ -49,7 +49,7 @@ export default function MainLayout() {
 
   const isActive = (p: string) => p==="/" ? location.pathname==="/" : location.pathname.startsWith(p);
   const isGroupActive = (g: any) => g.children ? g.children.some((c:any)=>isActive(c.path)) : isActive(g.path);
-  const logoUrl = branding.logo_url ? (branding.logo_url.startsWith('http')?branding.logo_url:`http://localhost:8000${branding.logo_url}`) : null;
+  const logoUrl = branding.logo_url || null;
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased flex flex-col" style={{fontFamily:"'Inter',sans-serif"}}>
@@ -185,7 +185,7 @@ function FooterContent({ logoUrl, branding, navigate }: any) {
     if (!subEmail) return;
     setSubSending(true);
     try {
-      const res = await fetch('http://localhost:8000/api/newsletter-subscribe/', {
+      const res = await fetch('/api/newsletter-subscribe/', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: subEmail, name: subName }),
       });

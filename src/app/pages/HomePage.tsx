@@ -50,7 +50,7 @@ export default function HomePage() {
     const img = obj?.resolved_image || obj?.image || obj?.image_url || '';
     if (!img) return '';
     if (typeof img === 'string' && img.startsWith('http')) return img;
-    return `http://localhost:8000${img}`;
+    return img;
   };
 
   if (loading) return <div style={{minHeight:'80vh',display:'flex',alignItems:'center',justifyContent:'center',color:'var(--on-surface-variant)',fontSize:18}}>Loading...</div>;

@@ -66,7 +66,7 @@ export default function AboutPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {team.map((m: any) => {
                 const photo = m.resolved_image || m.photo || m.photo_url || '';
-                const photoSrc = photo ? (photo.startsWith('http') ? photo : `http://localhost:8000${photo}`) : '';
+                const photoSrc = photo || '';
                 return (
                   <div key={m.id} onClick={() => navigate(`/team/${m.id}`)} className="bg-surface border border-outline-variant rounded-2xl overflow-hidden group hover:shadow-[0_8px_30px_rgba(0,17,58,0.08)] hover:-translate-y-1 transition-all text-center cursor-pointer">
                     <div className="h-56 bg-surface-container-low overflow-hidden">

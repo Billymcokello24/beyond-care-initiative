@@ -13,7 +13,7 @@ export default function ProgramDetail() {
   if (!p) return null;
 
   const img = p.resolved_image || p.image_url || '';
-  const imgSrc = img ? (img.startsWith('http') ? img : `http://localhost:8000${img}`) : '';
+  const imgSrc = img || '';
   const highlights: string[] = Array.isArray(p.highlights) ? p.highlights : [];
 
   return (

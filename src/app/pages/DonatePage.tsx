@@ -30,7 +30,7 @@ export default function DonatePage() {
     setMpesaSending(true);
     setMpesaResult(null);
     try {
-      const res = await fetch('http://localhost:8000/api/mpesa-stkpush/', {
+      const res = await fetch('/api/mpesa-stkpush/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phone: mpesaPhone, amount: mpesaAmount }),

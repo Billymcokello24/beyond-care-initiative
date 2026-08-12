@@ -15,7 +15,7 @@ export default function ProgramsPage() {
   const resolveImg = (obj: any) => {
     const img = obj?.resolved_image || obj?.image || obj?.image_url || '';
     if (!img) return '';
-    return img.startsWith('http') ? img : `http://localhost:8000${img}`;
+    return img;
   };
 
   return (

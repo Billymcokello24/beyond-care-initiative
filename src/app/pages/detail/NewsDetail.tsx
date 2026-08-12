@@ -13,7 +13,7 @@ export default function NewsDetail() {
   if (!a) return null;
 
   const img = a.resolved_image || a.image_url || '';
-  const imgSrc = img ? (img.startsWith('http') ? img : `http://localhost:8000${img}`) : '';
+  const imgSrc = img || '';
 
   return (
     <div>

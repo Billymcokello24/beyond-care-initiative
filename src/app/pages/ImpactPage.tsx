@@ -15,7 +15,7 @@ export default function ImpactPage() {
   const resolveImg = (obj: any) => {
     const img = obj?.resolved_image || obj?.image || obj?.image_url || '';
     if (!img) return '';
-    return img.startsWith('http') ? img : `http://localhost:8000${img}`;
+    return img;
   };
 
   if (loading) return <div style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',color:'var(--on-surface-variant)',fontSize:18}}>Loading...</div>;

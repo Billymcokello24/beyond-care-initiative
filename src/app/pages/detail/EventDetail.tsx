@@ -13,7 +13,7 @@ export default function EventDetail() {
   if (!e) return null;
 
   const img = e.resolved_image || e.image_url || '';
-  const imgSrc = img ? (img.startsWith('http') ? img : `http://localhost:8000${img}`) : '';
+  const imgSrc = img || '';
   const d = new Date(e.event_date);
 
   return (
